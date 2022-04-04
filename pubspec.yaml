@@ -1,7 +1,7 @@
 name: google_places_picker_advance
-description: A Flutter package which provides 'Picking Place' using Google Maps widget.
+description: A Flutter package which provides 'Picking Places' using Google Maps widget.
 version: 0.0.1
-homepage:
+homepage: https://github.com/MicroProgramer/google_places_picker_advance/
 
 environment:
   sdk: ">=2.16.2 <3.0.0"
