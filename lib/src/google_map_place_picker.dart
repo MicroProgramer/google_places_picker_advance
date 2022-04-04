@@ -49,6 +49,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
     this.selectInitialPosition,
     this.language,
     this.forceSearchOnZoomChanged,
+    this.popOnPickResult,
     this.hidePlaceDetailsWhenDraggingPin,
   }) : super(key: key);
 
@@ -73,7 +74,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
   final bool? usePlaceDetailSearch;
 
   final bool? selectInitialPosition;
-
+  final bool? popOnPickResult;
   final String? language;
 
   final bool? forceSearchOnZoomChanged;
@@ -94,7 +95,7 @@ class GoogleMapPlacePicker extends StatelessWidget {
     );
 
     if (response.errorMessage?.isNotEmpty == true || response.status == "REQUEST_DENIED") {
-      print("Camera Location Search Error: " + response.errorMessage!);
+      print("Location Search Error: " + response.errorMessage!);
       if (onSearchFailed != null) {
         onSearchFailed!(response.status);
       }
@@ -346,6 +347,9 @@ class GoogleMapPlacePicker extends StatelessWidget {
             ),
             onPressed: () {
               onPlacePicked!(result);
+              if (popOnPickResult != null && popOnPickResult == true){
+                Navigator.pop(context, result);
+              }
             },
           ),
         ],

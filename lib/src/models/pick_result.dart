@@ -24,13 +24,14 @@ class PickResult {
     this.vicinity,
     this.utcOffset,
     this.website,
-    this.reviews,
+    this.reviews, this.latitude, this.longitude
   });
 
   final String? placeId;
   final Geometry? geometry;
   final String? formattedAddress;
   final List<String>? types;
+  final double? latitude, longitude;
   final List<AddressComponent>? addressComponents;
 
   // Below results will not be fetched if 'usePlaceDetailSearch' is set to false (Defaults to false).
@@ -59,6 +60,8 @@ class PickResult {
       formattedAddress: result.formattedAddress,
       types: result.types,
       addressComponents: result.addressComponents,
+      latitude: result.geometry.location.lat,
+      longitude: result.geometry.location.lng,
     );
   }
 
