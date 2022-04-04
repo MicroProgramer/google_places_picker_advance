@@ -61,6 +61,7 @@ class PlacePicker extends StatefulWidget {
     this.automaticallyImplyAppBarLeading = true,
     this.autocompleteOnTrailingWhitespace = false,
     this.hidePlaceDetailsWhenDraggingPin = true,
+    this.popOnPickResult
   }) : super(key: key);
 
   final String apiKey;
@@ -95,6 +96,7 @@ class PlacePicker extends StatefulWidget {
   final List<String>? autocompleteTypes;
   final List<Component>? autocompleteComponents;
   final bool? strictbounds;
+  final bool? popOnPickResult;
   final String? region;
 
   /// If true the [body] and the scaffold's floating widgets should size
@@ -408,6 +410,7 @@ class _PlacePickerState extends State<PlacePicker> {
       onToggleMapType: () {
         provider!.switchMapType();
       },
+      popOnPickResult: widget.popOnPickResult,
       onMyLocation: () async {
         // Prevent to click many times in short period.
         if (provider!.isOnUpdateLocationCooldown == false) {
