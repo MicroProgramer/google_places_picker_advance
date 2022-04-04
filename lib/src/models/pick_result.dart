@@ -52,6 +52,34 @@ class PickResult {
   final String? website;
   final List<Review>? reviews;
 
+  Map<String, dynamic> toMap() {
+    return {
+      'placeId': this.placeId,
+      'geometry': this.geometry,
+      'formattedAddress': this.formattedAddress,
+      'types': this.types,
+      'addressComponents': this.addressComponents,
+      'adrAddress': this.adrAddress,
+      'formattedPhoneNumber': this.formattedPhoneNumber,
+      'id': this.id,
+      'reference': this.reference,
+      'icon': this.icon,
+      'name': this.name,
+      'openingHours': this.openingHours,
+      'photos': this.photos,
+      'internationalPhoneNumber': this.internationalPhoneNumber,
+      'priceLevel': this.priceLevel,
+      'rating': this.rating,
+      'scope': this.scope,
+      'url': this.url,
+      'vicinity': this.vicinity,
+      'utcOffset': this.utcOffset,
+      'website': this.website,
+      'reviews': this.reviews,
+    };
+  }
+
+
   factory PickResult.fromGeocodingResult(GeocodingResult result) {
     return PickResult(
       placeId: result.placeId,
@@ -88,4 +116,6 @@ class PickResult {
       reviews: result.reviews,
     );
   }
+
+
 }
