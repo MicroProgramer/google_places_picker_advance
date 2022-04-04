@@ -9,8 +9,6 @@ Fetching current location using Baseflow's [geolocator](https://pub.dev/packages
 Place and Geocoding API using hadrienlejard's [google_maps_webservice](https://pub.dev/packages/google_maps_webservice)   
 Builder using kevmoo's [tuple](https://pub.dev/packages/tuple)
 
-## Preview
-![](preview.gif)
 
 ## Support
 If the package was useful or saved your time, please do not hesitate to buy me a cup of coffee! ;)  
