@@ -323,7 +323,7 @@ final ThemeData darkTheme = ThemeData.dark().copyWith(
 );
 ```
 
-![](screenshot2.png)
+![](screenshot.png)
 
 ## Feature Requests and Issues
 Please file feature requests and bugs at the [issue tracker][tracker].
